@@ -1,0 +1,13 @@
+body {
+  background-color: rgba(0, 0, 0, 0.95);
+  color: white;
+  font-family: system-ui;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
