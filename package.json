@@ -1,0 +1,20 @@
+{
+  "name": "react_course",
+  "version": "1.0.0",
+  "description": "Curso enfocado en el aprendizaje de React usando proyectos y pruebas técnicas.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JMLTUnderCode/React_Course.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JMLTUnderCode/React_Course/issues"
+  },
+  "homepage": "https://github.com/JMLTUnderCode/React_Course#readme"
+}
