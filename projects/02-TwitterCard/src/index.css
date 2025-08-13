@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  color: white;
+  font-family: system-ui;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+}
