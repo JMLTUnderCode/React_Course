@@ -2,7 +2,7 @@ import React from "react";
 import { TURNS } from "../constants";
 import { Square } from "./Square";
 
-type TurnProps = {
+interface TurnProps {
   turn: string;
 }
 

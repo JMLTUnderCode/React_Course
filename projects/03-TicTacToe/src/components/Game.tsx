@@ -6,7 +6,7 @@ import { CheckDraw } from '../logic/CheckDraw'
 import { saveToLocalStorage } from "../logic/Storage"
 import confetti from 'canvas-confetti'
 
-type GameProps = {
+interface GameProps {
   board: (string | null)[]
   winner: string | null
   turn: string

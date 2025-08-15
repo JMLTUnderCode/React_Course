@@ -1,6 +1,6 @@
 import React from "react"
 
-type SquareProps = {
+interface SquareProps {
   children?: React.ReactNode
   isSelected?: boolean
   updateBoard?: (index: number) => void
@@ -10,15 +10,30 @@ type SquareProps = {
 export const Square: React.FC<SquareProps> = ({
   children = null,
   isSelected = false,
-  updateBoard = () => {},
+  updateBoard,
   index = 0
 }) => {
   const className = `square ${isSelected ? 'is-selected' : ''}`
   
-  const handleClick = () => { updateBoard(index) }
+  const handleClick = () => { 
+    if (updateBoard) {
+      updateBoard(index)
+    }
+  }
 
   return (
-    <div onClick={handleClick} className={className}>
+    <div
+      onClick={handleClick}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          handleClick()
+        }
+      }}
+      className={className}
+      role="button"
+      tabIndex={0}
+      aria-pressed={isSelected}
+    >
       {children}
     </div>
   )

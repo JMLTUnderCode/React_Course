@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState } from 'react'
 import { Game } from './components/Game'
 import { Turn } from './components/Turn'
@@ -8,7 +9,7 @@ import { resetGame } from './logic/ResetGame'
 
 import './App.css'
 
-function App() {
+export function App() {
   const [board, setBoard] = useState<(string | null)[]>(() => {
     const boardFromStorage = getFromLocalStorage('board')
     return boardFromStorage ? boardFromStorage : Array(9).fill(null)
@@ -41,5 +42,3 @@ function App() {
     </div>
   )
 }
-
-export default App

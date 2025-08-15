@@ -1,3 +1,4 @@
+import React from "react"
 import { TwitterFollowCard } from "./components/TwitterFollowCard"
 
 import "./App.css"

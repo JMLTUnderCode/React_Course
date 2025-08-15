@@ -1,7 +1,7 @@
 import React from "react"
 import { Square } from "./Square"
 
-type WinnerModalProps = {
+interface WinnerModalProps {
 	winner?: string | null
 	resetGame?: () => void
 }

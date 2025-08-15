@@ -1,7 +1,13 @@
+import React from "react"
 import { useState } from 'react';
 import { FormatUserName } from '../utils/FormatUserName';
 
-export function TwitterFollowCard({userName='', name=''}) {
+interface TwitterFollowCardProps {
+  userName?: string;
+  name?: string;
+}
+
+export function TwitterFollowCard({userName = '', name = ''}: TwitterFollowCardProps) {
   const [isFollowing, setIsFollowing] = useState(false);
 
   const imageSrc = `https://unavatar.io/${userName}`;
