@@ -16,5 +16,17 @@
   "bugs": {
     "url": "https://github.com/JMLTUnderCode/React_Course/issues"
   },
-  "homepage": "https://github.com/JMLTUnderCode/React_Course#readme"
+  "homepage": "https://github.com/JMLTUnderCode/React_Course#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.33.0",
+    "eslint": "^9.33.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.39.1"
+  },
+  "type": "module"
 }
