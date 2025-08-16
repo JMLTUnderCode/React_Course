@@ -1,4 +1,3 @@
-import React from "react";
 import { IMG_CAT_URL } from "../constants";
 
 export const getCatImg = async (fact: string) => {

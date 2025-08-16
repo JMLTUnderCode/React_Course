@@ -1,4 +1,3 @@
-import React from "react";
 import { RANDOM_FACT_URL } from "../constants";
 
 export const getRandomFact = async () => {
