@@ -15,7 +15,6 @@ export default tseslint.config(
     plugins: {
       react,
       'react-hooks': reactHooks,
-      // 'jsx-a11y' eliminado porque ya lo incluye el flat config
     },
     languageOptions: {
       parserOptions: {
@@ -38,10 +37,8 @@ export default tseslint.config(
       prettier,
     ],
     rules: {
-      // Reglas recomendadas de react-hooks:
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
-      // Puedes agregar reglas personalizadas aquí
     },
   }
 )
