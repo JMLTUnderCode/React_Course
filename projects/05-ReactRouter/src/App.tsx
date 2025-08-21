@@ -1,29 +1,23 @@
-import React from "react";
-import { EVENTS } from "./consts";
 import { HomePage } from "./pages/Home";
 import { AboutPage } from "./pages/About";
+import { Router } from "./Router";
+import type { RouteProps } from "./types";
+
+const appRoutes: RouteProps[] = [
+  {
+    path: '/',
+    Component: HomePage
+  },
+  {
+    path: '/about',
+    Component: AboutPage
+  }
+];
 
 function App() {
-  const [currentPath, setCurrentPath] = React.useState(window.location.pathname);
-  
-  React.useEffect(() => {
-    const onLocationChange = () => {
-      setCurrentPath(window.location.pathname);
-    }
-
-    window.addEventListener(EVENTS.PUSHSTATE, onLocationChange);
-    window.addEventListener(EVENTS.POPSTATE, onLocationChange);
-
-    return () => {
-      window.removeEventListener(EVENTS.PUSHSTATE, onLocationChange);
-      window.removeEventListener(EVENTS.POPSTATE, onLocationChange);
-    }
-  });
-
   return (
     <main>
-      {currentPath === '/' && <HomePage />}
-      {currentPath === '/about' && <AboutPage />}
+      <Router routes={appRoutes} defaultComponent={() => <h1>404</h1>} />
     </main>
   )
 }
