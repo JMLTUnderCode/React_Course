@@ -1,0 +1,12 @@
+main {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  text-align: center;
+}
+img {
+	border: 1px solid #ccc;
+	border-radius: 50%;
+	padding: 4px;
+  width: 200px;
+}
