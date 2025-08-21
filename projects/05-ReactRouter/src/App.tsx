@@ -23,7 +23,7 @@ function AboutPage() {
     <div>
       <h1>About Page</h1>
       <div>
-        <img src="https://avatars.githubusercontent.com/u/45317638?v=4" alt="Picture of Junior Lara" />
+        <img src="https://avatars.githubusercontent.com/u/45317638?v=4" alt="Perfil of Junior Lara" />
       </div>
       <p>Welcome to the About Page!</p>
       <button onClick={() => Navigate('/')}>Go to Home Page</button>
