@@ -1,15 +1,10 @@
-import { EVENTS } from "./consts";
+import { EVENTS } from "../consts";
+import type { LinkProps } from "../types";
 
 export function Navigate(href : string | URL | null) {
   window.history.pushState({}, '', href);
   const navigationEvent = new Event(EVENTS.PUSHSTATE);
   window.dispatchEvent(navigationEvent);
-}
-
-interface LinkProps {
-	target?: string;
-	to: string;
-  children: React.ReactNode;
 }
 
 export function Link ({ target, to, children} : LinkProps) {
@@ -21,6 +16,7 @@ export function Link ({ target, to, children} : LinkProps) {
     if (isMainEvent && isManageableEvent && !isModifiedEvent) {
       event.preventDefault();
       Navigate(to);
+      window.scrollTo(0, 0);
     }
   };
 

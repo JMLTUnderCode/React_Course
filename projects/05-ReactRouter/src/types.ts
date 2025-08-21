@@ -8,3 +8,8 @@ export interface RouterProps {
   defaultComponent: React.ComponentType;
 };
 
+export interface LinkProps {
+	target?: string;
+	to: string;
+  children: React.ReactNode;
+}

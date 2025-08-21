@@ -2,7 +2,7 @@ import React from "react";
 import { EVENTS } from "./consts";
 import type { RouterProps } from "./types";
 
-export function Router({ routes, defaultComponent = () => <h1>404</h1> } : RouterProps) {
+export function Router({ routes, defaultComponent } : RouterProps) {
   const [currentPath, setCurrentPath] = React.useState(window.location.pathname);
   
   React.useEffect(() => {

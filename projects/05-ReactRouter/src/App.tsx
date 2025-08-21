@@ -1,5 +1,6 @@
 import { HomePage } from "./pages/Home";
 import { AboutPage } from "./pages/About";
+import { Page404 } from "./pages/Page404";
 import { Router } from "./Router";
 import type { RouteProps } from "./types";
 
@@ -17,7 +18,7 @@ const appRoutes: RouteProps[] = [
 function App() {
   return (
     <main>
-      <Router routes={appRoutes} defaultComponent={() => <h1>404</h1>} />
+      <Router routes={appRoutes} defaultComponent={Page404} />
     </main>
   )
 }
