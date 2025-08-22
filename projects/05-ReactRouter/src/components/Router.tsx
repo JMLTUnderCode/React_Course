@@ -1,9 +1,9 @@
 import React from "react";
 import { EVENTS } from "../consts";
-import type { RouterProps } from "../types";
+import type { RouterProps, RouteProps } from "../types";
 import { match } from 'path-to-regexp';
 
-export function Router({ routes, defaultComponent } : RouterProps) {
+export function Router({ children, routes, defaultComponent } : RouterProps) {
   const [currentPath, setCurrentPath] = React.useState(window.location.pathname);
   
   React.useEffect(() => {
@@ -22,7 +22,18 @@ export function Router({ routes, defaultComponent } : RouterProps) {
 
   let routeParams: Partial<Record<string, string | string[]>> = {};
 
-  const Page = routes.find(({ path }) => {
+  // Add routes from children <Route /> components
+  const routesFromChildren = React.Children.map(children, (child) => {
+    if (!React.isValidElement(child)) return null;
+    const { props, type } = child as React.ReactElement<RouteProps>;
+    const isRoute = (type as { name: string }).name === 'Route';
+
+    return isRoute ? props : null;
+  });
+
+  const routesToUse = Array.isArray(routesFromChildren) ? routes.concat(routesFromChildren) : routes;
+
+  const Page = routesToUse.find(({ path }) => {
     if (path === currentPath) return true;
 
     // Using path-to-regexp for detecting dinamic path

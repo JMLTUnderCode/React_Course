@@ -4,6 +4,7 @@ export interface RouteProps {
 };
 
 export interface RouterProps {
+  children: React.ReactNode;
   routes: RouteProps[];
   defaultComponent: React.ComponentType;
 };
