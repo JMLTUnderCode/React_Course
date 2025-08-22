@@ -1,6 +1,6 @@
 export interface RouteProps {
   path: string;
-  Component: React.ComponentType;
+  Component: React.ComponentType<{ routeParams?: Partial<Record<string, string | string[]>> }>;
 };
 
 export interface RouterProps {

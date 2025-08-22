@@ -2,7 +2,7 @@ import { Link } from "../components/Link";
 
 export function AboutPage() {
   return (
-    <div>
+    <div className="aboutpage">
       <h1>About Page</h1>
       <div>
         <img src="https://avatars.githubusercontent.com/u/45317638?v=4" alt="Perfil picture of Junior Lara with a grey shirt" />

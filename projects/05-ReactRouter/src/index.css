@@ -4,9 +4,25 @@ main {
   place-items: center;
   text-align: center;
 }
+h1 {
+  margin: 0;
+}
+
 img {
 	border: 1px solid #ccc;
 	border-radius: 50%;
 	padding: 4px;
   width: 300px;
+}
+
+p {
+  margin: 0;
+}
+
+.homepage, .aboutpage, .searchpage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
 }
