@@ -21,8 +21,8 @@ const useI18n = (lang: string) => {
   return i18n[lang as keyof typeof i18n] || i18n.en;
 };
 
-export function AboutPage({ routeParams } : { routeParams: Partial<Record<string, string | string[]>>} ) {
-  const i18n = useI18n(routeParams.lang as string ?? 'en');
+export function AboutPage({ routeParams } : { routeParams?: Partial<Record<string, string | string[]>>} ) {
+  const i18n = useI18n(routeParams?.lang as string ?? 'en');
   return (
     <div className="aboutpage">
       <h1>{i18n.title}</h1>
