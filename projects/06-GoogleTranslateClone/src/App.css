@@ -1,0 +1,13 @@
+#root {
+	max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-style: double;
+  border-width: 6px;
+  border-color: #0000007e;
+  border-radius: 16px;
+}
+
+h1 {
+  text-align: center;
+}
