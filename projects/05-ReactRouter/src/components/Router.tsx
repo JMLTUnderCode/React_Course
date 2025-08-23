@@ -2,13 +2,14 @@ import React from "react";
 import { EVENTS } from "../consts";
 import type { RouterProps, RouteProps } from "../types";
 import { match } from 'path-to-regexp';
+import { getCurrentPath } from "../utils";
 
 export function Router({ children, routes, defaultComponent } : RouterProps) {
-  const [currentPath, setCurrentPath] = React.useState(window.location.pathname);
-  
+  const [currentPath, setCurrentPath] = React.useState(getCurrentPath());
+
   React.useEffect(() => {
     const onLocationChange = () => {
-      setCurrentPath(window.location.pathname);
+      setCurrentPath(getCurrentPath());
     }
 
     window.addEventListener(EVENTS.PUSHSTATE, onLocationChange);
@@ -31,7 +32,9 @@ export function Router({ children, routes, defaultComponent } : RouterProps) {
     return isRoute ? props : null;
   });
 
-  const routesToUse = Array.isArray(routesFromChildren) ? routes.concat(routesFromChildren) : routes;
+  const routesToUse = Array.isArray(routesFromChildren) 
+    ? routes.concat(routesFromChildren).filter(Boolean) 
+    : routes;
 
   const Page = routesToUse.find(({ path }) => {
     if (path === currentPath) return true;
