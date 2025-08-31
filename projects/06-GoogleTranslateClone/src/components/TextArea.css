@@ -1,0 +1,39 @@
+.container-textArea {
+  position: relative;
+  height: 100%;
+}
+
+.textArea {
+  border: 0;
+  resize: none;
+  height: 100%;
+}
+
+.from {
+  background-color: #f8f9fa;
+}
+
+.to {
+  background-color: #e9ecef;
+}
+
+.container-buttons {
+  display: flex;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.clipboard-button, .speaker-button {
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+.show {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.show:hover {
+  opacity: .5;
+}

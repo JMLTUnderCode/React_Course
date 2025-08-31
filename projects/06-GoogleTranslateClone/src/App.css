@@ -11,3 +11,7 @@
 h1 {
   text-align: center;
 }
+
+.col {
+  height: 250px;
+}

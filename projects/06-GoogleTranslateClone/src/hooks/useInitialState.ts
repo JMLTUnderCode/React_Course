@@ -17,14 +17,19 @@ function reducer(state: State, action: Action): State {
     return {
       ...state,
       fromLanguage: state.toLanguage,
-      toLanguage: state.fromLanguage
+      toLanguage: state.fromLanguage,
+      fromText: state.result,
+      result: ''
     };
   }
 
   if (type === 'SET_FROM_LANGUAGE') {
+    if (state.fromLanguage === action.payload) return state;
     return {
       ...state,
-      fromLanguage: action.payload
+      fromLanguage: action.payload,
+      result: '',
+      loading: state.fromText ? true : false
     };
   }
 
@@ -39,13 +44,16 @@ function reducer(state: State, action: Action): State {
   if (type === 'SET_FROM_TEXT') {
     return {
       ...state,
-      fromText: action.payload
+      loading: action.payload ? true : false,
+      fromText: action.payload,
+      result: ''
     };
   }
 
   if (type === 'SET_RESULT') {
     return {
       ...state,
+      loading: false,
       result: action.payload
     };
   }
