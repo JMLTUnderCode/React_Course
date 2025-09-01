@@ -1,13 +1,18 @@
 import { Link } from '../components/Link';
+import './Page404.css';
 
 export function Page404 () {
   return (
-    <>
-      <div>
-        <h1>This is NOT fine</h1>
-        <img src='https://midu.dev/images/this-is-fine-404.gif' alt='Gif of a dog sitting in a burning room' />
+    <section className="page_404">
+      <div className="four_zero_four_bg">
+          <h1 className="text-center">404</h1>
       </div>
-      <Link to="/">Go to Home Page</Link>
-    </>
+
+      <div className="content_box_404">
+        <h3>Look like you're lost</h3>
+        <p>The page you are looking for is not available!</p>
+        <Link to="/">Go to Home</Link>
+      </div>
+    </section>
   )
 }
