@@ -16,6 +16,11 @@ export async function Translate({ text, fromLanguage, toLanguage }: { text: stri
 	  return text; // No es necesario traducir si es el mismo idioma
   }
 
+  // Control temporal de fromLanguage = auto
+  if (fromLanguage === 'auto') {
+    fromLanguage = 'es';
+  }
+
   const response = await fetch(`${URL_MYMEMORY}q=${text}&langpair=${fromLanguage}|${toLanguage}`);
   const data : Response = await response.json();
   const status = data?.responseStatus;

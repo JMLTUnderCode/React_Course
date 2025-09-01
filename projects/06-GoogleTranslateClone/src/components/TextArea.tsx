@@ -26,12 +26,12 @@ export function TextArea({ type, loading, onChange, value }: TextAreaProps) {
 
   const handleClipboardClick = () => {
     navigator.clipboard.writeText(value).catch(() => {});
-  }
+  };
 
   const handleSpeak = () => {
     const utterance = new SpeechSynthesisUtterance(value);
     window.speechSynthesis.speak(utterance);
-  }
+  };
 
   return (
     <div className='container-textArea'>
