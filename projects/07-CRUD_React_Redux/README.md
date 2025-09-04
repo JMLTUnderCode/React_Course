@@ -1,6 +1,9 @@
 # CRUD de Usuarios con React Redux
 
 - [x] Se usara React Toolkit (https://redux-toolkit.js.org/introduction/getting-started)
+  ```
+  npm install @reduxjs/toolkit
+  ```
 - [x] Como Linter se queria usar Rome pero esta quedo sin mantenimiento, se creo Biome y se quizo usar ESLinter y ya.
 - [x] Se usara Tremor a nivel de componentes (https://npm.tremor.so/docs/getting-started/installation)
   Instalar dependencias de Tremor
