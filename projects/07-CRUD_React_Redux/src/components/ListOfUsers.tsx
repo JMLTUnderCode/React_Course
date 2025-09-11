@@ -18,6 +18,8 @@ import {
   TableHead,
   TableHeaderCell,
   TableRow,
+  Title,
+  Badge
 } from '@tremor/react';
 
 // This example requires @tanstack/react-table
@@ -70,10 +72,10 @@ const users: {
 }[] = [
   {
     id: '1',
-    name: 'Jane Cooper',
-    email: 'jane.cooper@example.com',
+    name: 'Junior Lara',
+    email: 'jmltundercode@example.com',
     online: true,
-    github: 'https://github.com/jane-cooper',
+    github: 'JMLTUnderCode',
     role: 'Admin',
     lastEdited: '23/09/2023 13:00',
   },
@@ -82,7 +84,7 @@ const users: {
     name: 'John Doe',
     email: 'john.doe@example.com',
     online: true,
-    github: 'https://github.com/john-doe',
+    github: 'john-doe',
     role: 'User',
     lastEdited: '23/09/2023 13:00',
   },
@@ -91,7 +93,7 @@ const users: {
     name: 'Alice Smith',
     email: 'alice.smith@example.com',
     online: false,
-    github: 'https://github.com/alice-smith',
+    github: 'alice-smith',
     role: 'User',
     lastEdited: '23/09/2023 13:00',
   },
@@ -266,6 +268,10 @@ export function ListOfUsers() {
 
   return (
     <>
+      <Title>
+        List of users
+        <Badge className='ml-1'>{table.getFilteredRowModel().rows.length}</Badge>
+      </Title>
       <Table>
         <TableHead>
           {table.getHeaderGroups().map((headerGroup) => (
@@ -276,7 +282,6 @@ export function ListOfUsers() {
               {headerGroup.headers.map((header) => (
                 <TableHeaderCell
                   key={header.id}
-                  className={classNames(header.column.columnDef.meta.align)}
                 >
                   {flexRender(
                     header.column.columnDef.header,
@@ -301,10 +306,10 @@ export function ListOfUsers() {
                     row.getIsSelected()
                       ? 'bg-tremor-background-muted dark:bg-dark-tremor-background-muted'
                       : '',
-                    cell.column.columnDef.meta.align,
-                    'relative',
+                    'relative', index === 2 ? 'flex items-center' : '',
                   )}
                 >
+                  {index === 2 && <img className='flex' src={`https://unavatar.io/github/${row.getVisibleCells()[5].getValue()}`} />}
                   {index === 0 && row.getIsSelected() && (
                     <div className="absolute inset-y-0 left-0 w-0.5 bg-tremor-brand dark:bg-dark-tremor-brand" />
                   )}
